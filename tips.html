@@ -9,10 +9,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .neon { text-shadow: 0 0 30px #00f7ff, 0 0 60px #00f7ff; }
+        .neon { text-shadow: 0 0 15px #00f7ff, 0 0 30px #00f7ff; }
         .tilt { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
-        .tilt:hover { transform: perspective(1200px) rotateX(12deg) rotateY(12deg) scale(1.05); }
-        .fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+        .tilt:hover { transform: perspective(1000px) rotateX(8deg) rotateY(8deg) scale(1.03); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -21,8 +21,8 @@
     <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <i class="fas fa-shield-alt text-5xl text-cyan-400"></i>
-                <h1 class="text-3xl font-black tracking-[-2px] neon">PROTECT THE HOUSEHOLD</h1>
+                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
+                <h1 class="text-2xl font-black tracking-[-1px] neon">PROTECT THE HOUSEHOLD</h1>
             </div>
             <div class="flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
                 <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -37,31 +37,31 @@
     </nav>
 
     <div class="max-w-7xl mx-auto px-8 py-32">
-        <h1 class="text-[90px] leading-none font-black tracking-[-6px] neon text-center mb-20">SAFETY TIPS</h1>
+        <h1 class="text-5xl font-black tracking-[-2px] neon text-center mb-16">Safety Tips</h1>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl flex gap-6 fade-in">
+            <div class="tilt bg-zinc-900/80 p-8 rounded-3xl flex gap-6 fade-in">
                 <i class="fas fa-lock text-5xl text-cyan-400"></i>
-                <div><h4 class="font-bold text-2xl">Change router password</h4><p class="text-zinc-400">Never leave it on factory default.</p></div>
+                <div><h4 class="font-bold text-xl">Change router password</h4><p class="text-zinc-400">Never use factory default.</p></div>
             </div>
-            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl flex gap-6 fade-in">
+            <div class="tilt bg-zinc-900/80 p-8 rounded-3xl flex gap-6 fade-in">
                 <i class="fas fa-microphone-slash text-5xl text-cyan-400"></i>
-                <div><h4 class="font-bold text-2xl">Disable mic & camera</h4><p class="text-zinc-400">On smart TVs and voice assistants.</p></div>
+                <div><h4 class="font-bold text-xl">Disable mic & camera</h4><p class="text-zinc-400">On smart TVs and speakers.</p></div>
             </div>
-            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl flex gap-6 fade-in">
+            <div class="tilt bg-zinc-900/80 p-8 rounded-3xl flex gap-6 fade-in">
                 <i class="fas fa-gamepad text-5xl text-cyan-400"></i>
-                <div><h4 class="font-bold text-2xl">Limit in-game chat</h4><p class="text-zinc-400">Especially for teenagers.</p></div>
+                <div><h4 class="font-bold text-xl">Limit in-game chat</h4><p class="text-zinc-400">Especially for teenagers.</p></div>
             </div>
-            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl flex gap-6 fade-in">
+            <div class="tilt bg-zinc-900/80 p-8 rounded-3xl flex gap-6 fade-in">
                 <i class="fas fa-robot text-5xl text-cyan-400"></i>
-                <div><h4 class="font-bold text-2xl">Beware of AI voice cloning</h4><p class="text-zinc-400">Always verify urgent calls in person.</p></div>
+                <div><h4 class="font-bold text-xl">Beware of AI voice cloning</h4><p class="text-zinc-400">Always verify urgent calls.</p></div>
             </div>
-            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl flex gap-6 fade-in">
+            <div class="tilt bg-zinc-900/80 p-8 rounded-3xl flex gap-6 fade-in">
                 <i class="fas fa-key text-5xl text-cyan-400"></i>
-                <div><h4 class="font-bold text-2xl">Use strong unique passwords</h4><p class="text-zinc-400">And a password manager.</p></div>
+                <div><h4 class="font-bold text-xl">Strong unique passwords</h4><p class="text-zinc-400">Use a password manager.</p></div>
             </div>
-            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl flex gap-6 fade-in">
+            <div class="tilt bg-zinc-900/80 p-8 rounded-3xl flex gap-6 fade-in">
                 <i class="fas fa-shield-alt text-5xl text-cyan-400"></i>
-                <div><h4 class="font-bold text-2xl">Enable two-factor authentication</h4><p class="text-zinc-400">On all family accounts.</p></div>
+                <div><h4 class="font-bold text-xl">Enable 2FA</h4><p class="text-zinc-400">On all family accounts.</p></div>
             </div>
         </div>
     </div>
