@@ -7,25 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .neon-cyan { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; }
-        .tilt-card { transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .tilt-card:hover { transform: perspective(1000px) rotateX(8deg) rotateY(8deg) scale(1.03); }
-        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .neon { text-shadow: 0 0 30px #00f7ff, 0 0 60px #00f7ff; }
+        .tilt { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+        .tilt:hover { transform: perspective(1200px) rotateX(12deg) rotateY(12deg) scale(1.05); }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-[#0f0a2e] text-white">
+<body class="bg-black text-white">
 
-    <!-- NAVBAR -->
-    <nav class="bg-[#1a1340]/90 backdrop-blur-lg sticky top-0 z-50 border-b border-cyan-500/30">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <i class="fas fa-shield-alt text-4xl text-cyan-400 animate-pulse"></i>
-                <h1 class="text-2xl font-bold tracking-tighter neon-cyan">PROTECT THE HOUSEHOLD</h1>
+    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <i class="fas fa-shield-alt text-5xl text-cyan-400"></i>
+                <h1 class="text-3xl font-black tracking-[-2px] neon">PROTECT THE HOUSEHOLD</h1>
             </div>
-            <div class="flex items-center gap-8 text-sm font-medium">
+            <div class="flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
                 <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
                 <a href="about.html" class="hover:text-cyan-400 transition">About</a>
                 <a href="activities.html" class="text-cyan-400 font-semibold">Activities</a>
@@ -33,45 +32,39 @@
                 <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:scale-105 transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="px-8 py-3 bg-white text-black font-bold rounded-2xl hover:bg-cyan-400 hover:text-black transition">UMaT CY381</a>
         </div>
     </nav>
 
-    <div class="max-w-6xl mx-auto px-6 py-24">
-        <h1 class="text-6xl font-bold mb-12 text-center neon-cyan">Our Activities</h1>
-        
+    <div class="max-w-7xl mx-auto px-8 py-32">
+        <h1 class="text-[90px] leading-none font-black tracking-[-6px] neon text-center mb-20">ACTIVITIES</h1>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl fade-in">
-                <h3 class="text-2xl font-semibold mb-3">1. Walk-Through Exhibition</h3>
-                <p class="text-purple-200">Real home setup with live demos on default settings (router hack, smart TV listening, gaming chat, AI voice cloning).</p>
+            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
+                <h3 class="text-3xl font-bold mb-4">Walk-Through Exhibition</h3>
+                <p class="text-zinc-400">Real home setup with live demos on default settings.</p>
             </div>
-            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl fade-in">
-                <h3 class="text-2xl font-semibold mb-3">2. Family Cyber Safety Breakfast</h3>
-                <p class="text-purple-200">Parents & teens together discussing real scenarios and taking home practical steps.</p>
+            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
+                <h3 class="text-3xl font-bold mb-4">Family Cyber Safety Breakfast</h3>
+                <p class="text-zinc-400">Parents & teens discussing real scenarios.</p>
             </div>
-            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl fade-in">
-                <h3 class="text-2xl font-semibold mb-3">3. Live Unboxing & Demo</h3>
-                <p class="text-purple-200">Showing exactly what happens when a new smart device connects with factory settings.</p>
+            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
+                <h3 class="text-3xl font-bold mb-4">Live Unboxing & Demo</h3>
+                <p class="text-zinc-400">Showing what happens on factory settings.</p>
             </div>
-            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl fade-in">
-                <h3 class="text-2xl font-semibold mb-3">4. Roving Table Campaign</h3>
-                <p class="text-purple-200">We brought the campaign directly into Tarkwa public spaces and estates.</p>
+            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
+                <h3 class="text-3xl font-bold mb-4">Roving Table Campaign</h3>
+                <p class="text-zinc-400">Took the message into Tarkwa public spaces.</p>
             </div>
-            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl fade-in">
-                <h3 class="text-2xl font-semibold mb-3">5. Cyber Threat Simulation</h3>
-                <p class="text-purple-200">Participants experienced a real-looking AI voice-cloning scam and data breach.</p>
+            <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
+                <h3 class="text-3xl font-bold mb-4">Cyber Threat Simulation</h3>
+                <p class="text-zinc-400">Participants experienced AI voice-cloning scams.</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Scroll fade-in
         document.querySelectorAll('.fade-in').forEach(el => {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) el.classList.add('visible');
-                });
-            });
+            const observer = new IntersectionObserver(e => e.forEach(entry => entry.isIntersecting && el.classList.add('visible')));
             observer.observe(el);
         });
     </script>
