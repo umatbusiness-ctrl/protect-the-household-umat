@@ -6,16 +6,24 @@
     <title>Safety Tips - Protect the Household</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; }</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .neon-cyan { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; }
+        .tilt-card { transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+        .tilt-card:hover { transform: perspective(1000px) rotateX(8deg) rotateY(8deg) scale(1.03); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-[#0f0a2e] text-white">
 
-    <!-- NAVBAR (no Our Team) -->
-    <nav class="bg-zinc-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
+    <!-- NAVBAR -->
+    <nav class="bg-[#1a1340]/90 backdrop-blur-lg sticky top-0 z-50 border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
-                <h1 class="text-2xl font-bold tracking-tighter">PROTECT THE HOUSEHOLD</h1>
+                <i class="fas fa-shield-alt text-4xl text-cyan-400 animate-pulse"></i>
+                <h1 class="text-2xl font-bold tracking-tighter neon-cyan">PROTECT THE HOUSEHOLD</h1>
             </div>
             <div class="flex items-center gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -25,26 +33,38 @@
                 <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="bg-cyan-400 hover:bg-cyan-300 text-zinc-950 px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:scale-105 transition">UMaT CY381</a>
         </div>
     </nav>
 
     <div class="max-w-6xl mx-auto px-6 py-24">
-        <h1 class="text-6xl font-bold mb-6 text-center">Practical Safety Tips</h1>
-        <p class="text-xl text-zinc-400 text-center mb-16">Simple actions you can take today to protect your family</p>
+        <h1 class="text-6xl font-bold mb-6 text-center neon-cyan">Practical Safety Tips</h1>
+        <p class="text-xl text-purple-300 text-center mb-16">Simple actions you can take today to protect your family</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-lock text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Change your router password</h4><p class="text-zinc-400">Never use the factory default.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-microphone-slash text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Disable mic &amp; camera access</h4><p class="text-zinc-400">On smart TVs, speakers, and apps.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-gamepad text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Limit in-game chat for teens</h4><p class="text-zinc-400">Review friend requests daily.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-robot text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Beware of AI voice cloning</h4><p class="text-zinc-400">Always verify urgent calls in person.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-key text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Use strong unique passwords</h4><p class="text-zinc-400">And a password manager.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-shield-alt text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Enable two-factor authentication</h4><p class="text-zinc-400">On all family accounts.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-mobile-alt text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Check app permissions</h4><p class="text-zinc-400">Before installing anything new.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-download text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Keep devices updated</h4><p class="text-zinc-400">Always install firmware updates.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-vpn text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Use a VPN on public Wi-Fi</h4><p class="text-zinc-400">Especially when away from home.</p></div></div>
-            <div class="bg-zinc-900 p-8 rounded-3xl flex gap-5 hover:shadow-2xl hover:shadow-cyan-400/30 transition"><i class="fas fa-users text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Talk to your children</h4><p class="text-zinc-400">About online safety and gaming rules.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-lock text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Change your router password</h4><p class="text-purple-200">Never use the factory default.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-microphone-slash text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Disable mic &amp; camera access</h4><p class="text-purple-200">On smart TVs, speakers, and apps.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-gamepad text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Limit in-game chat for teens</h4><p class="text-purple-200">Review friend requests daily.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-robot text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Beware of AI voice cloning</h4><p class="text-purple-200">Always verify urgent calls in person.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-key text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Use strong unique passwords</h4><p class="text-purple-200">And a password manager.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-shield-alt text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Enable two-factor authentication</h4><p class="text-purple-200">On all family accounts.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-mobile-alt text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Check app permissions</h4><p class="text-purple-200">Before installing anything new.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-download text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Keep devices updated</h4><p class="text-purple-200">Always install firmware updates.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-vpn text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Use a VPN on public Wi-Fi</h4><p class="text-purple-200">Especially when away from home.</p></div></div>
+            <div class="tilt-card bg-[#1a1340] p-8 rounded-3xl flex gap-5 fade-in"><i class="fas fa-users text-4xl text-emerald-400"></i><div><h4 class="font-semibold text-xl">Talk to your children</h4><p class="text-purple-200">About online safety and gaming rules.</p></div></div>
         </div>
     </div>
+
+    <script>
+        // Scroll fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) el.classList.add('visible');
+                });
+            });
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
