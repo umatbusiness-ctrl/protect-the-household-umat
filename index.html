@@ -19,32 +19,26 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('hero.jpg');   /* ← Your uploaded image */
+            background-image: url('hero.jpg');   /* Make sure this file is uploaded */
             background-size: cover;
             background-position: center;
-            filter: brightness(0.55) contrast(1.15);
+            filter: brightness(0.9) contrast(1.05);   /* Very clear background */
             transition: transform 0.8s ease-out;
         }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.9));
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
+        .glass {
+            background: rgba(15, 23, 42, 0.45);   /* Dark glass */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .title {
-            font-size: 3.2rem;
-            line-height: 1.1;
+            font-size: 3.4rem;
+            line-height: 1.05;
             font-style: italic;
             font-weight: 700;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
         }
 
         .tilt-card {
@@ -86,13 +80,13 @@
         </div>
     </nav>
 
-    <!-- HERO with your laptop + shield image -->
+    <!-- HERO - Glass design with clearer background -->
     <header class="hero">
         <div class="hero-bg" id="bg"></div>
-        <div class="content min-h-screen flex items-center justify-center px-8 text-center">
-            <div class="max-w-4xl">
+        <div class="min-h-screen flex items-center justify-center px-8 relative z-10">
+            <div class="glass max-w-2xl w-full p-12 md:p-16 rounded-3xl text-center">
                 <h1 class="title text-white">Protect the Household</h1>
-                <p class="text-xl md:text-2xl text-zinc-300 mt-6 mb-12 max-w-2xl mx-auto">
+                <p class="text-xl text-zinc-200 mt-6 mb-10">
                     A cybersecurity awareness campaign by UMaT students helping families in Tarkwa stay safe from smart home risks, gaming threats, surveillance, and AI dangers.
                 </p>
                 <div class="flex flex-wrap justify-center gap-6">
@@ -133,15 +127,15 @@
     </footer>
 
     <script>
-        // Mouse parallax effect for 3D feel
+        // Mouse parallax
         const bg = document.getElementById('bg');
         document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.clientX) / 60;
-            const y = (window.innerHeight / 2 - e.clientY) / 60;
-            bg.style.transform = `translate(${x}px, ${y}px) scale(1.06)`;
+            const x = (window.innerWidth / 2 - e.clientX) / 80;
+            const y = (window.innerHeight / 2 - e.clientY) / 80;
+            bg.style.transform = `translate(${x}px, ${y}px) scale(1.04)`;
         });
 
-        // Fade-in on scroll
+        // Fade-in
         document.querySelectorAll('.fade-in').forEach(el => {
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
