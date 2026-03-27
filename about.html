@@ -6,16 +6,22 @@
     <title>About - Protect the Household</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; }</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .neon-cyan { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-[#0f0a2e] text-white">
 
-    <!-- NAVBAR (no Our Team) -->
-    <nav class="bg-zinc-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
+    <!-- NAVBAR -->
+    <nav class="bg-[#1a1340]/90 backdrop-blur-lg sticky top-0 z-50 border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
-                <h1 class="text-2xl font-bold tracking-tighter">PROTECT THE HOUSEHOLD</h1>
+                <i class="fas fa-shield-alt text-4xl text-cyan-400 animate-pulse"></i>
+                <h1 class="text-2xl font-bold tracking-tighter neon-cyan">PROTECT THE HOUSEHOLD</h1>
             </div>
             <div class="flex items-center gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -25,24 +31,24 @@
                 <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="bg-cyan-400 hover:bg-cyan-300 text-zinc-950 px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:scale-105 transition">UMaT CY381</a>
         </div>
     </nav>
 
     <div class="max-w-4xl mx-auto px-6 py-24">
         <h1 class="text-6xl font-bold mb-10 text-center neon-cyan">About the Campaign</h1>
         
-        <div class="prose prose-invert max-w-none text-lg leading-relaxed text-zinc-300">
-            <p class="text-xl">Families in Tarkwa are adopting smart devices faster than they learn the risks. Our campaign showed real dangers in routers, gaming, surveillance, and AI — and gave every family simple steps to protect themselves.</p>
+        <div class="prose prose-invert max-w-none text-lg leading-relaxed text-purple-200">
+            <p class="text-xl fade-in">Families in Tarkwa are adopting smart devices faster than they learn the risks. Our campaign showed real dangers in routers, gaming, surveillance, and AI — and gave every family simple steps to protect themselves.</p>
             
-            <h2 class="text-3xl font-semibold mt-16 mb-8 text-cyan-300">Our Objectives</h2>
-            <div class="grid md:grid-cols-2 gap-8 text-zinc-300">
-                <ul class="space-y-4">
+            <h2 class="text-3xl font-semibold mt-16 mb-8 text-cyan-300 fade-in">Our Objectives</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-purple-200">
+                <ul class="space-y-4 fade-in">
                     <li class="flex gap-3"><i class="fas fa-check-circle text-cyan-400 mt-1"></i> Teach parents real smart-device risks</li>
                     <li class="flex gap-3"><i class="fas fa-check-circle text-cyan-400 mt-1"></i> Help teenagers game safely</li>
                     <li class="flex gap-3"><i class="fas fa-check-circle text-cyan-400 mt-1"></i> Explain what home devices actually record</li>
                 </ul>
-                <ul class="space-y-4">
+                <ul class="space-y-4 fade-in">
                     <li class="flex gap-3"><i class="fas fa-check-circle text-cyan-400 mt-1"></i> Show live AI threats (voice cloning, scams)</li>
                     <li class="flex gap-3"><i class="fas fa-check-circle text-cyan-400 mt-1"></i> Give every family one easy action today</li>
                     <li class="flex gap-3"><i class="fas fa-check-circle text-cyan-400 mt-1"></i> Build a lasting public resource</li>
@@ -50,5 +56,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Scroll fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) el.classList.add('visible');
+                });
+            });
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
