@@ -9,11 +9,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            overflow: hidden;
+        }
         .hero-bg {
+            position: absolute;
+            inset: 0;
             background-image: url('hero.jpg');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.55) contrast(1.15);
+            filter: brightness(0.85) contrast(1.05);
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
         }
         .title {
             font-size: 3.2rem;
@@ -22,26 +35,16 @@
             font-weight: 700;
             text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
         }
-        .tilt-card {
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s;
-        }
-        .tilt-card:hover {
-            transform: perspective(1100px) rotateX(8deg) rotateY(8deg) scale(1.03);
-        }
         .fade-in {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(40px);
             transition: all 0.9s ease;
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
 
-    <!-- NAVBAR (same as index) -->
     <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-blue-500/30">
         <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -60,30 +63,30 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div class="hero-bg absolute inset-0"></div>
-        <div class="hero::after absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-10"></div>
-        <div class="content relative z-20 text-center px-8 max-w-3xl">
-            <h1 class="title text-white">About the Campaign</h1>
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="min-h-[60vh] flex items-center justify-center px-8 relative z-10">
+            <div class="glass max-w-3xl w-full p-12 md:p-16 rounded-3xl text-center">
+                <h1 class="title text-white">About the Campaign</h1>
+            </div>
         </div>
     </header>
 
     <section class="py-20 bg-zinc-900">
         <div class="max-w-5xl mx-auto px-8">
-            <div class="prose prose-invert max-w-none text-lg text-zinc-300">
-                <p>The "Protect the Household" campaign is a student-led initiative from the University of Mines and Technology (UMaT), Tarkwa. Our goal is to raise awareness about cybersecurity threats affecting modern Ghanaian families, especially those using smart devices, online gaming, and AI tools.</p>
+            <div class="prose prose-invert max-w-none text-lg text-zinc-300 leading-relaxed">
+                <p>The "Protect the Household" is a student-led cybersecurity awareness campaign from the University of Mines and Technology (UMaT), Tarkwa. We aim to educate families about the hidden risks of smart home devices, online gaming, surveillance systems, and AI threats.</p>
             </div>
 
-            <h2 class="text-3xl font-semibold mt-16 mb-10">Our Objectives</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-8 text-center">Our Main Objectives</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="tilt-card bg-zinc-800 p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-4">Educate Families</h3>
-                    <p class="text-zinc-400">Teach practical ways to secure smart home devices and protect personal data.</p>
+                <div class="glass p-8 rounded-3xl fade-in">
+                    <h3 class="text-xl font-semibold mb-3">Raise Awareness</h3>
+                    <p class="text-zinc-400">Help families understand real cybersecurity threats affecting daily life.</p>
                 </div>
-                <div class="tilt-card bg-zinc-800 p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-4">Build Awareness</h3>
-                    <p class="text-zinc-400">Highlight real risks like voice cloning, gaming scams, and surveillance threats.</p>
+                <div class="glass p-8 rounded-3xl fade-in">
+                    <h3 class="text-xl font-semibold mb-3">Provide Practical Solutions</h3>
+                    <p class="text-zinc-400">Teach simple steps to secure routers, devices, and online accounts.</p>
                 </div>
             </div>
         </div>
