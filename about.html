@@ -9,15 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-
-        .hero {
-            position: relative;
-            min-height: 60vh;
-            overflow: hidden;
-        }
         .hero-bg {
-            position: absolute;
-            inset: 0;
             background-image: url('hero.jpg');
             background-size: cover;
             background-position: center;
@@ -63,8 +55,8 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-bg"></div>
+    <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="hero-bg absolute inset-0"></div>
         <div class="min-h-[60vh] flex items-center justify-center px-8 relative z-10">
             <div class="glass max-w-3xl w-full p-12 md:p-16 rounded-3xl text-center">
                 <h1 class="title text-white">About the Campaign</h1>
@@ -74,11 +66,11 @@
 
     <section class="py-20 bg-zinc-900">
         <div class="max-w-5xl mx-auto px-8">
-            <div class="prose prose-invert max-w-none text-lg text-zinc-300 leading-relaxed">
+            <div class="prose prose-invert max-w-none text-lg text-zinc-300">
                 <p>The "Protect the Household" is a student-led cybersecurity awareness campaign from the University of Mines and Technology (UMaT), Tarkwa. We aim to educate families about the hidden risks of smart home devices, online gaming, surveillance systems, and AI threats.</p>
             </div>
 
-            <h2 class="text-3xl font-semibold mt-16 mb-8 text-center">Our Main Objectives</h2>
+            <h2 class="text-3xl font-semibold mt-16 mb-10 text-center">Our Objectives</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass p-8 rounded-3xl fade-in">
                     <h3 class="text-xl font-semibold mb-3">Raise Awareness</h3>
