@@ -6,39 +6,73 @@
     <title>Gallery - Protect the Household</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; }</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .neon-cyan { text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff; }
+        .tilt-card { transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+        .tilt-card:hover { transform: perspective(1200px) rotateX(10deg) rotateY(10deg) scale(1.05); box-shadow: 0 0 30px rgba(0, 247, 255, 0.4); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-[#0f0a2e] text-white">
 
-<!-- NAVBAR (no Our Team) -->
-    <nav class="bg-zinc-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
+    <!-- NAVBAR -->
+    <nav class="bg-[#1a1340]/90 backdrop-blur-lg sticky top-0 z-50 border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
-                <h1 class="text-2xl font-bold tracking-tighter">PROTECT THE HOUSEHOLD</h1>
+                <i class="fas fa-shield-alt text-4xl text-cyan-400 animate-pulse"></i>
+                <h1 class="text-2xl font-bold tracking-tighter neon-cyan">PROTECT THE HOUSEHOLD</h1>
             </div>
             <div class="flex items-center gap-8 text-sm font-medium">
-                <a href="index.html" class="text-cyan-400 font-semibold">Home</a>
+                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
                 <a href="about.html" class="hover:text-cyan-400 transition">About</a>
                 <a href="activities.html" class="hover:text-cyan-400 transition">Activities</a>
                 <a href="tips.html" class="hover:text-cyan-400 transition">Safety Tips</a>
-                <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
+                <a href="gallery.html" class="text-cyan-400 font-semibold">Gallery</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="bg-cyan-400 hover:bg-cyan-300 text-zinc-950 px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-6 py-3 rounded-2xl text-sm font-semibold hover:scale-105 transition">UMaT CY381</a>
         </div>
     </nav>
-    <div class="max-w-6xl mx-auto px-6 py-20">
-        <h1 class="text-5xl font-bold mb-12 text-center">Event Gallery</h1>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Replace these with your real event photos (upload to imgur.com or any free host and paste the direct links) -->
-            <img src="https://picsum.photos/id/1015/600/400" alt="Walk-through" class="rounded-3xl">
-            <img src="https://picsum.photos/id/201/600/400" alt="Family Breakfast" class="rounded-3xl">
-            <img src="https://picsum.photos/id/301/600/400" alt="Live Demo" class="rounded-3xl">
-            <img src="https://picsum.photos/id/401/600/400" alt="Roving Table" class="rounded-3xl">
-            <img src="https://picsum.photos/id/501/600/400" alt="Simulation" class="rounded-3xl">
-            <img src="https://picsum.photos/id/601/600/400" alt="Team Photo" class="rounded-3xl">
+
+    <div class="max-w-6xl mx-auto px-6 py-24">
+        <h1 class="text-6xl font-bold mb-12 text-center neon-cyan">Event Gallery</h1>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Replace these placeholder URLs with your real event photos later -->
+            <div class="tilt-card overflow-hidden rounded-3xl fade-in">
+                <img src="https://picsum.photos/id/1015/600/400" alt="Walk-through Exhibition" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="tilt-card overflow-hidden rounded-3xl fade-in">
+                <img src="https://picsum.photos/id/201/600/400" alt="Family Breakfast" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="tilt-card overflow-hidden rounded-3xl fade-in">
+                <img src="https://picsum.photos/id/301/600/400" alt="Live Demo" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="tilt-card overflow-hidden rounded-3xl fade-in">
+                <img src="https://picsum.photos/id/401/600/400" alt="Roving Table" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="tilt-card overflow-hidden rounded-3xl fade-in">
+                <img src="https://picsum.photos/id/501/600/400" alt="Simulation" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="tilt-card overflow-hidden rounded-3xl fade-in">
+                <img src="https://picsum.photos/id/601/600/400" alt="Team at Work" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
         </div>
     </div>
+
+    <script>
+        // Scroll fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) el.classList.add('visible');
+                });
+            });
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
