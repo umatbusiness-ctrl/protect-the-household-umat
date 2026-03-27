@@ -6,45 +6,45 @@
     <title>Protect the Household | UMaT Cybersecurity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; margin:0; padding:0; overflow:hidden; }
 
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-           background-image: url('hero.jpg'); /* Replace with real image if needed */
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.6) contrast(1.1);
-            transition: transform 0.8s ease-out;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+        #canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: 1;
         }
 
-        .content {
+        .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            padding: 3rem 4rem;
+            border-radius: 24px;
+            max-width: 620px;
         }
 
         .title {
-            font-size: 3.2rem;
-            line-height: 1.1;
+            font-size: 3.4rem;
+            line-height: 1.05;
             font-style: italic;
             font-weight: 700;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+            color: white;
+            text-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
         }
 
         .tilt-card {
@@ -53,19 +53,9 @@
         .tilt-card:hover {
             transform: perspective(1100px) rotateX(8deg) rotateY(8deg) scale(1.03);
         }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.9s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-black text-white">
 
     <!-- NAVBAR -->
     <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-blue-500/30">
@@ -86,41 +76,41 @@
         </div>
     </nav>
 
-    <!-- HERO with new laptop + shield image -->
-    <header class="hero">
-        <div class="hero-bg" id="bg"></div>
-        <div class="content min-h-screen flex items-center justify-center px-8 text-center">
-            <div class="max-w-4xl">
-                <h1 class="title text-white">Protect the Household</h1>
-                <p class="text-xl md:text-2xl text-zinc-300 mt-6 mb-12 max-w-2xl mx-auto">
-                    A cybersecurity awareness campaign by UMaT students helping families in Tarkwa stay safe from smart home risks, gaming threats, surveillance, and AI dangers.
-                </p>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="activities.html" class="bg-blue-500 hover:bg-white text-black px-10 py-5 rounded-3xl font-semibold transition text-lg">Explore Activities</a>
-                    <a href="tips.html" class="border-2 border-blue-400 hover:bg-blue-500 hover:text-white px-10 py-5 rounded-3xl font-semibold transition text-lg">Safety Tips</a>
-                </div>
+    <!-- Tubes Cursor Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Main Content (Glass Panel) -->
+    <div class="hero-content">
+        <div class="glass">
+            <h1 class="title">Protect the Household</h1>
+            <p class="text-xl text-zinc-200 mt-6 mb-10">
+                A cybersecurity awareness campaign by UMaT students helping families in Tarkwa stay safe from smart home risks, gaming threats, surveillance, and AI dangers.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="activities.html" class="bg-blue-500 hover:bg-white text-black px-10 py-5 rounded-3xl font-semibold transition text-lg">Explore Activities</a>
+                <a href="tips.html" class="border-2 border-blue-400 hover:bg-blue-500 hover:text-white px-10 py-5 rounded-3xl font-semibold transition text-lg">Safety Tips</a>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Content Section -->
-    <section class="py-24 bg-zinc-900">
+    <!-- Quick Section -->
+    <section class="py-24 bg-zinc-900/80 relative z-10">
         <div class="max-w-6xl mx-auto px-8">
-            <h2 class="text-4xl font-semibold text-center mb-16">Key Threats We Addressed</h2>
+            <h2 class="text-4xl font-semibold text-center mb-16 text-white">Key Threats We Addressed</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center fade-in">
+                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center">
                     <i class="fas fa-router text-5xl text-blue-400 mb-6"></i>
                     <h3 class="text-2xl font-semibold">Smart Home Risks</h3>
                 </div>
-                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center fade-in">
+                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center">
                     <i class="fas fa-gamepad text-5xl text-blue-400 mb-6"></i>
                     <h3 class="text-2xl font-semibold">Gaming Exploitation</h3>
                 </div>
-                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center fade-in">
+                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center">
                     <i class="fas fa-camera text-5xl text-blue-400 mb-6"></i>
                     <h3 class="text-2xl font-semibold">Domestic Surveillance</h3>
                 </div>
-                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center fade-in">
+                <div class="tilt-card bg-zinc-800/80 backdrop-blur p-8 rounded-3xl text-center">
                     <i class="fas fa-robot text-5xl text-blue-400 mb-6"></i>
                     <h3 class="text-2xl font-semibold">AI Threats</h3>
                 </div>
@@ -128,20 +118,32 @@
         </div>
     </section>
 
-    <footer class="bg-black py-12 text-center text-zinc-500 text-sm">
+    <footer class="bg-black py-12 text-center text-zinc-500 text-sm relative z-10">
         UMaT CY381 Cybersecurity Lab Work 1 • March 2026 • Tarkwa, Ghana
     </footer>
 
     <script>
-        // Subtle mouse parallax for background
-        const bg = document.getElementById('bg');
-        document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.clientX) / 60;
-            const y = (window.innerHeight / 2 - e.clientY) / 60;
-            bg.style.transform = `translate(${x}px, ${y}px) scale(1.06)`;
+        // Tubes Cursor Effect
+        const canvas = document.getElementById('canvas');
+        const app = TubesCursor(canvas, {
+            tubes: {
+                colors: ["#3b82f6", "#60a5fa", "#93c5fd"],   // Blue tones to match your theme
+                lights: {
+                    intensity: 180,
+                    colors: ["#60a5fa", "#3b82f6", "#1e40af", "#93c5fd"]
+                }
+            }
         });
 
-        // Fade-in on scroll
+        // Optional: Click to change colors randomly (fun interactive touch)
+        document.body.addEventListener('click', () => {
+            const colors = Array.from({length: 3}, () => "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6,'0'));
+            const lightColors = Array.from({length: 4}, () => "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6,'0'));
+            app.tubes.setColors(colors);
+            app.tubes.setLightsColors(lightColors);
+        });
+
+        // Fade-in for cards (if you add more later)
         document.querySelectorAll('.fade-in').forEach(el => {
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
