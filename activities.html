@@ -3,134 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities - Protect the Household | UMaT</title>
+    <title>Activities | Protect the Household</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        .hero { position: relative; min-height: 100vh; overflow: hidden; }
         .hero-bg {
-            background-image: url('hero.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.85) contrast(1.05);
+            position: absolute; inset: 0;
+            background-image: url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover; background-position: center;
+            filter: brightness(0.55) contrast(1.15) saturate(1.1);
+            transition: transform 0.6s ease-out;
         }
-        .glass {
-            background: rgba(15, 23, 42, 0.45);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-        }
-        .title {
-            font-size: 3.2rem;
-            line-height: 1.1;
-            font-style: italic;
-            font-weight: 700;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-        }
-        .tilt-card {
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s;
-        }
-        .tilt-card:hover {
-            transform: perspective(1100px) rotateX(8deg) rotateY(8deg) scale(1.03);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s ease;
-        }
+        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,20,0.7), rgba(10,10,20,0.95)); z-index: 1; }
+        .content { position: relative; z-index: 2; }
+        .title { font-size: 4rem; line-height: 1.05; font-style: italic; font-weight: 700; text-shadow: 0 0 30px rgba(34, 211, 238, 0.7); }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.9s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
-
-    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-blue-500/30">
+    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <i class="fas fa-shield-alt text-4xl text-blue-400"></i>
+                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
                 <h1 class="text-2xl font-semibold tracking-tight">Protect the Household</h1>
             </div>
             <div class="flex items-center gap-8 text-sm font-medium">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="about.html" class="hover:text-blue-400 transition">About</a>
-                <a href="activities.html" class="hover:text-blue-400 transition">Activities</a>
-                <a href="tips.html" class="hover:text-blue-400 transition">Safety Tips</a>
-                <a href="gallery.html" class="hover:text-blue-400 transition">Gallery</a>
-                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+                <a href="about.html" class="hover:text-cyan-400 transition">About</a>
+                <a href="activities.html" class="hover:text-cyan-400 transition">Activities</a>
+                <a href="tips.html" class="hover:text-cyan-400 transition">Safety Tips</a>
+                <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="bg-blue-500 hover:bg-blue-400 text-black px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-black px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
         </div>
     </nav>
 
-    <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div class="hero-bg absolute inset-0"></div>
-        <div class="min-h-[60vh] flex items-center justify-center px-8 relative z-10">
-            <div class="glass max-w-3xl w-full p-12 md:p-16 rounded-3xl text-center">
-                <h1 class="title text-white">Our Activities & Roles</h1>
+    <header class="hero">
+        <div class="hero-bg" id="bg"></div>
+        <div class="content min-h-screen flex items-center justify-center px-8 text-center">
+            <div class="max-w-4xl">
+                <h1 class="title text-white">Our Activities</h1>
             </div>
         </div>
     </header>
 
     <section class="py-20 bg-zinc-900">
-        <div class="max-w-6xl mx-auto px-8">
+        <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Router and Home Network Security</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: JOEL MENSAH KORDIE ANKAMAH-BOATENG (Group Leader)</p>
-                    <p class="text-zinc-400 text-sm">Live demonstration showing how default router passwords allow anyone to access the entire home network. Visitors see the admin panel being opened without any special tools.</p>
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Interactive Exhibitions</h3>
+                    <p class="text-zinc-300">Live demonstrations of common smart home vulnerabilities and how to fix them.</p>
                 </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Smart TV and Connected Devices</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: BENEFO FRIMPONG MICHEAL</p>
-                    <p class="text-zinc-400 text-sm">Shows what permissions smart TVs and connected devices request during setup, including microphone and camera access, and how data is shared with third parties.</p>
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Family Breakfast Sessions</h3>
+                    <p class="text-zinc-300">Parents and students discussing real cybersecurity scenarios together.</p>
                 </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Gaming Addiction and Spending Mechanics</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: SULEMANA AKUNATU ABDUL JALIL</p>
-                    <p class="text-zinc-400 text-sm">Explains how popular games use manipulative spending systems (in-game purchases) that can drain family mobile money accounts without parents noticing.</p>
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">AI Voice Cloning Demo</h3>
+                    <p class="text-zinc-300">Hands-on experience with modern voice scams and how to detect them.</p>
                 </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">In-Game Stranger Danger and Grooming</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: IBRAHIM ABDUL AZIZ</p>
-                    <p class="text-zinc-400 text-sm">Demonstrates how strangers can contact children through in-game chat systems with almost no barriers, highlighting real grooming risks.</p>
-                </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Safe Gaming Practices and Parental Controls</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: YAMOAH PRINCE</p>
-                    <p class="text-zinc-400 text-sm">Practical guide showing parents how to set up parental controls, monitor playtime, and teach children safe gaming habits.</p>
-                </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Smart Speaker and Voice Data</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: MOHAMMED CHIMSI</p>
-                    <p class="text-zinc-400 text-sm">Shows what smart speakers actually record, how voice data is sent to servers, and simple ways to limit unwanted listening.</p>
-                </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Home CCTV and Camera Privacy</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: GUUYIRE DANIEL WENAWOME</p>
-                    <p class="text-zinc-400 text-sm">Live demo revealing how cheap CCTV cameras can be accessed remotely if default settings are not changed, showing the privacy risks.</p>
-                </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Voice Cloning and AI Impersonation</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: SALAKPI CYRIL SCON</p>
-                    <p class="text-zinc-400 text-sm">Real-time demonstration of how AI can clone a family member's voice from a short recording to create convincing scam calls.</p>
-                </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">AI Data Profiling and Phone Permissions</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: BUKARI SAMUEL AMOAKO</p>
-                    <p class="text-zinc-400 text-sm">Shows how apps and AI features on phones build detailed profiles of users through permissions, and how to review and limit them.</p>
-                </div>
-
-                <div class="tilt-card glass p-8 rounded-3xl fade-in">
-                    <h3 class="text-xl font-semibold mb-2">AI Scams and Fake Content</h3>
-                    <p class="text-blue-400 font-medium mb-3">Demonstrator: FURO ISAIAH MWIGUMA</p>
-                    <p class="text-zinc-400 text-sm">Demonstration of deepfake content and AI-generated scams, teaching families how to spot and avoid them.</p>
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Gaming Safety Workshop</h3>
+                    <p class="text-zinc-300">Teaching safe gaming practices and spotting online dangers.</p>
                 </div>
             </div>
         </div>
@@ -141,11 +80,15 @@
     </footer>
 
     <script>
+        const bg = document.getElementById('bg');
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 50;
+            const y = (window.innerHeight / 2 - e.clientY) / 50;
+            bg.style.transform = `translate(${x}px, ${y}px) scale(1.08)`;
+        });
         document.querySelectorAll('.fade-in').forEach(el => {
             const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) el.classList.add('visible');
-                });
+                if (entries[0].isIntersecting) el.classList.add('visible');
             });
             observer.observe(el);
         });
