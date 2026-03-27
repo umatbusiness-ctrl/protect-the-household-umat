@@ -3,65 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Protect the Household</title>
+    <title>About - Protect the Household | UMaT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .neon { text-shadow: 0 0 15px #00f7ff, 0 0 30px #00f7ff; }
-        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .hero-bg {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.55) contrast(1.15);
+        }
+        .title {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            font-style: italic;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+        .tilt-card {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s;
+        }
+        .tilt-card:hover {
+            transform: perspective(1100px) rotateX(8deg) rotateY(8deg) scale(1.03);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="bg-black text-white">
+<body class="bg-zinc-950 text-white">
 
-    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
-                <h1 class="text-2xl font-black tracking-[-1px] neon">PROTECT THE HOUSEHOLD</h1>
+    <!-- NAVBAR (same as index) -->
+    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-blue-500/30">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-shield-alt text-4xl text-blue-400"></i>
+                <h1 class="text-2xl font-semibold tracking-tight">Protect the Household</h1>
             </div>
-            <div class="flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
-                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-                <a href="about.html" class="text-cyan-400 font-semibold">About</a>
-                <a href="activities.html" class="hover:text-cyan-400 transition">Activities</a>
-                <a href="tips.html" class="hover:text-cyan-400 transition">Safety Tips</a>
-                <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
-                <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="about.html" class="hover:text-blue-400 transition">About</a>
+                <a href="activities.html" class="hover:text-blue-400 transition">Activities</a>
+                <a href="tips.html" class="hover:text-blue-400 transition">Safety Tips</a>
+                <a href="gallery.html" class="hover:text-blue-400 transition">Gallery</a>
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="px-8 py-3 bg-white text-black font-bold rounded-2xl hover:bg-cyan-400 hover:text-black transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="bg-blue-500 hover:bg-blue-400 text-black px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
         </div>
     </nav>
 
-    <div class="max-w-5xl mx-auto px-8 py-32 text-center">
-        <h1 class="text-5xl font-black tracking-[-2px] neon mb-12">About the Campaign</h1>
-        <p class="text-2xl text-zinc-400 max-w-2xl mx-auto mb-20 fade-in">
-            Families in Tarkwa are adopting smart devices faster than they learn the risks. 
-            We showed real dangers and gave simple steps to stay safe.
-        </p>
-        <div class="grid md:grid-cols-2 gap-16 text-left max-w-4xl mx-auto">
-            <div class="fade-in">
-                <h2 class="text-3xl font-bold mb-8">Objectives</h2>
-                <ul class="space-y-6 text-lg text-zinc-400">
-                    <li class="flex gap-4"><span class="text-cyan-400">→</span> Teach parents real smart-device risks</li>
-                    <li class="flex gap-4"><span class="text-cyan-400">→</span> Help teenagers game safely</li>
-                    <li class="flex gap-4"><span class="text-cyan-400">→</span> Explain what home devices actually record</li>
-                </ul>
+    <!-- HERO -->
+    <header class="hero relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="hero-bg absolute inset-0"></div>
+        <div class="hero::after absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 z-10"></div>
+        <div class="content relative z-20 text-center px-8 max-w-3xl">
+            <h1 class="title text-white">About the Campaign</h1>
+        </div>
+    </header>
+
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-5xl mx-auto px-8">
+            <div class="prose prose-invert max-w-none text-lg text-zinc-300">
+                <p>The "Protect the Household" campaign is a student-led initiative from the University of Mines and Technology (UMaT), Tarkwa. Our goal is to raise awareness about cybersecurity threats affecting modern Ghanaian families, especially those using smart devices, online gaming, and AI tools.</p>
             </div>
-            <div class="fade-in">
-                <ul class="space-y-6 text-lg text-zinc-400">
-                    <li class="flex gap-4"><span class="text-cyan-400">→</span> Show live AI threats (voice cloning, scams)</li>
-                    <li class="flex gap-4"><span class="text-cyan-400">→</span> Give every family one easy action today</li>
-                    <li class="flex gap-4"><span class="text-cyan-400">→</span> Build a lasting public resource</li>
-                </ul>
+
+            <h2 class="text-3xl font-semibold mt-16 mb-10">Our Objectives</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="tilt-card bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="text-xl font-semibold mb-4">Educate Families</h3>
+                    <p class="text-zinc-400">Teach practical ways to secure smart home devices and protect personal data.</p>
+                </div>
+                <div class="tilt-card bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="text-xl font-semibold mb-4">Build Awareness</h3>
+                    <p class="text-zinc-400">Highlight real risks like voice cloning, gaming scams, and surveillance threats.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <footer class="bg-black py-12 text-center text-zinc-500 text-sm">
+        UMaT CY381 Cybersecurity Lab Work 1 • March 2026 • Tarkwa, Ghana
+    </footer>
 
     <script>
         document.querySelectorAll('.fade-in').forEach(el => {
-            const observer = new IntersectionObserver(e => e.forEach(entry => entry.isIntersecting && el.classList.add('visible')));
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) el.classList.add('visible');
+                });
+            });
             observer.observe(el);
         });
     </script>
