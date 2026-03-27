@@ -17,14 +17,35 @@
             filter: brightness(0.55) contrast(1.15) saturate(1.1);
             transition: transform 0.6s ease-out;
         }
-        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,20,0.7), rgba(10,10,20,0.95)); z-index: 1; }
+        .hero::after { 
+            content: ''; 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(to bottom, rgba(10,10,20,0.7), rgba(10,10,20,0.95)); 
+            z-index: 1; 
+        }
         .content { position: relative; z-index: 2; }
-        .title { font-size: 4rem; line-height: 1.05; font-style: italic; font-weight: 700; text-shadow: 0 0 30px rgba(34, 211, 238, 0.7); }
-        .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.9s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .title { 
+            font-size: 4rem; 
+            line-height: 1.05; 
+            font-style: italic; 
+            font-weight: 700; 
+            text-shadow: 0 0 30px rgba(34, 211, 238, 0.7); 
+        }
+        .fade-in { 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: all 0.9s ease; 
+        }
+        .fade-in.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
+    <!-- NAVBAR -->
     <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -43,33 +64,80 @@
         </div>
     </nav>
 
+    <!-- HERO - Same background as home page -->
     <header class="hero">
         <div class="hero-bg" id="bg"></div>
         <div class="content min-h-screen flex items-center justify-center px-8 text-center">
             <div class="max-w-4xl">
-                <h1 class="title text-white">Our Activities</h1>
+                <h1 class="title text-white">Our Activities & Contributions</h1>
             </div>
         </div>
     </header>
 
+    <!-- Team Contributions -->
     <section class="py-20 bg-zinc-900">
         <div class="max-w-5xl mx-auto px-8">
-            <div class="grid md:grid-cols-2 gap-8">
+            <h2 class="text-4xl font-semibold text-center mb-12">Team Contributions</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
-                    <h3 class="text-2xl font-semibold mb-4">Interactive Exhibitions</h3>
-                    <p class="text-zinc-300">Live demonstrations of common smart home vulnerabilities and how to fix them.</p>
+                    <h3 class="font-semibold text-xl mb-2">JOEL MENSAH KORDIE ANKAMAH-BOATENG</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Group Leader)</p>
+                    <p class="text-zinc-300">Led the overall campaign planning and coordination. Handled Router and Home Network Security demonstrations.</p>
                 </div>
+
                 <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
-                    <h3 class="text-2xl font-semibold mb-4">Family Breakfast Sessions</h3>
-                    <p class="text-zinc-300">Parents and students discussing real cybersecurity scenarios together.</p>
+                    <h3 class="font-semibold text-xl mb-2">BENEFO FRIMPONG MICHEAL</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Smart TV and Connected Devices Demonstrator)</p>
+                    <p class="text-zinc-300">Demonstrated risks associated with Smart TVs, streaming apps, and connected home devices.</p>
                 </div>
+
                 <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
-                    <h3 class="text-2xl font-semibold mb-4">AI Voice Cloning Demo</h3>
-                    <p class="text-zinc-300">Hands-on experience with modern voice scams and how to detect them.</p>
+                    <h3 class="font-semibold text-xl mb-2">SULEMANA AKUNATU ABDUL JALIL</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Gaming Addiction and Spending Mechanics Demonstrator)</p>
+                    <p class="text-zinc-300">Showed how gaming platforms use addictive mechanics and spending traps.</p>
                 </div>
+
                 <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
-                    <h3 class="text-2xl font-semibold mb-4">Gaming Safety Workshop</h3>
-                    <p class="text-zinc-300">Teaching safe gaming practices and spotting online dangers.</p>
+                    <h3 class="font-semibold text-xl mb-2">IBRAHIM ABDUL AZIZ</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(In-Game Stranger Danger and Grooming Demonstrator)</p>
+                    <p class="text-zinc-300">Highlighted dangers of stranger interactions and grooming through in-game chat systems.</p>
+                </div>
+
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="font-semibold text-xl mb-2">YAMOAH PRINCE</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Safe Gaming Practices and Parental Controls Guide)</p>
+                    <p class="text-zinc-300">Presented safe gaming habits and how parents can set effective controls.</p>
+                </div>
+
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="font-semibold text-xl mb-2">MOHAMMED CHIMSI</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Smart Speaker and Voice Data Demonstrator)</p>
+                    <p class="text-zinc-300">Demonstrated privacy risks with smart speakers and voice data collection.</p>
+                </div>
+
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="font-semibold text-xl mb-2">GUUYIRE DANIEL WENAWOME</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Home CCTV and Camera Privacy Demonstrator)</p>
+                    <p class="text-zinc-300">Showed privacy and security issues with home CCTV cameras and surveillance systems.</p>
+                </div>
+
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="font-semibold text-xl mb-2">SALAKPI CYRIL SCON</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(Voice Cloning and AI Impersonation Demonstrator)</p>
+                    <p class="text-zinc-300">Demonstrated AI voice cloning scams and impersonation techniques.</p>
+                </div>
+
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="font-semibold text-xl mb-2">BUKARI SAMUEL AMOAKO</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(AI Data Profiling and Phone Permissions Demonstrator)</p>
+                    <p class="text-zinc-300">Explained how apps collect and profile user data through phone permissions.</p>
+                </div>
+
+                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">
+                    <h3 class="font-semibold text-xl mb-2">FURO ISAIAH MWIGUMA</h3>
+                    <p class="text-cyan-400 text-sm mb-4">(AI Scams and Fake Content Demonstrator)</p>
+                    <p class="text-zinc-300">Demonstrated AI-generated fake content and modern scam techniques.</p>
                 </div>
             </div>
         </div>
@@ -86,6 +154,7 @@
             const y = (window.innerHeight / 2 - e.clientY) / 50;
             bg.style.transform = `translate(${x}px, ${y}px) scale(1.08)`;
         });
+
         document.querySelectorAll('.fade-in').forEach(el => {
             const observer = new IntersectionObserver(entries => {
                 if (entries[0].isIntersecting) el.classList.add('visible');
