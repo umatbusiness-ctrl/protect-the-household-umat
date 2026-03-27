@@ -3,94 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Protect the Household</title>
+    <title>Contact - Protect the Household | UMaT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .neon { text-shadow: 0 0 30px #00f7ff, 0 0 60px #00f7ff; }
-        .tilt { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
-        .tilt:hover { transform: perspective(1200px) rotateX(12deg) rotateY(12deg) scale(1.04); }
-        .fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+        .hero-bg {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.85) contrast(1.05);
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .title {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            font-style: italic;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+        .tilt-card {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s;
+        }
+        .tilt-card:hover {
+            transform: perspective(1100px) rotateX(8deg) rotateY(8deg) scale(1.03);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s ease;
+        }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-black text-white">
+<body class="bg-zinc-950 text-white">
 
-    <!-- NAVBAR -->
-    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <i class="fas fa-shield-alt text-5xl text-cyan-400"></i>
-                <h1 class="text-3xl font-black tracking-[-2px] neon">PROTECT THE HOUSEHOLD</h1>
+    <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-blue-500/30">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-shield-alt text-4xl text-blue-400"></i>
+                <h1 class="text-2xl font-semibold tracking-tight">Protect the Household</h1>
             </div>
-            <div class="flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
-                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-                <a href="about.html" class="hover:text-cyan-400 transition">About</a>
-                <a href="activities.html" class="hover:text-cyan-400 transition">Activities</a>
-                <a href="tips.html" class="hover:text-cyan-400 transition">Safety Tips</a>
-                <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
-                <a href="contact.html" class="text-cyan-400 font-semibold">Contact</a>
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="about.html" class="hover:text-blue-400 transition">About</a>
+                <a href="activities.html" class="hover:text-blue-400 transition">Activities</a>
+                <a href="tips.html" class="hover:text-blue-400 transition">Safety Tips</a>
+                <a href="gallery.html" class="hover:text-blue-400 transition">Gallery</a>
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
             </div>
-            <a href="https://umat.edu.gh" target="_blank" class="px-8 py-3 bg-white text-black font-bold rounded-2xl hover:bg-cyan-400 hover:text-black transition">UMaT CY381</a>
+            <a href="https://umat.edu.gh" target="_blank" class="bg-blue-500 hover:bg-blue-400 text-black px-6 py-3 rounded-2xl text-sm font-semibold transition">UMaT CY381</a>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto px-8 py-32 text-center">
-        <h1 class="text-[90px] leading-none font-black tracking-[-6px] neon mb-8">GET IN TOUCH</h1>
-        <p class="text-2xl text-zinc-400 max-w-md mx-auto mb-20">
-            10 UMaT Cybersecurity students, Tarkwa.<br>
-            Each of us posted behind-the-scenes content on LinkedIn.
-        </p>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">JOEL MENSAH KORDIE ANKAMAH-BOATENG<br><span class="text-sm text-cyan-300">(Leader)</span></span>
-            </a>
-            <!-- The other 9 buttons are the same style — just replace the # with your real links when you send them -->
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">BENEFO FRIMPONG MICHEAL</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">SULEMANA AKUNATU ABDUL JALIL</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">IBRAHIM ABDUL AZIZ</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">YAMOAH PRINCE</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">MOHAMMED CHIMSI</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">GUUYIRE DANIEL WENAWOME</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">SALAKPI CYRIL SCON</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">BUKARI SAMUEL AMOAKO</span>
-            </a>
-            <a href="#" class="tilt bg-zinc-900/80 hover:bg-zinc-800 p-8 rounded-3xl flex items-center gap-5 text-left group fade-in">
-                <i class="fab fa-linkedin text-5xl text-cyan-400 group-hover:scale-110 transition"></i>
-                <span class="font-bold text-xl">FURO ISAIAH MWIGUMA</span>
-            </a>
+    <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="hero-bg absolute inset-0"></div>
+        <div class="min-h-[60vh] flex items-center justify-center px-8 relative z-10">
+            <div class="glass max-w-3xl w-full p-12 md:p-16 rounded-3xl text-center">
+                <h1 class="title text-white">Get In Touch</h1>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-4xl mx-auto px-8">
+            <div class="glass p-12 rounded-3xl">
+                <h2 class="text-2xl font-semibold mb-8 text-center">Our Team Members</h2>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <!-- Replace # with your actual LinkedIn links later -->
+                    <a href="#" class="tilt-card flex items-center gap-4 p-5 bg-zinc-800/70 rounded-2xl hover:bg-blue-500/20 transition fade-in">
+                        <i class="fab fa-linkedin text-3xl text-blue-400"></i>
+                        <div>JOEL MENSAH KORDIE ANKAMAH-BOATENG (Leader)</div>
+                    </a>
+                    <a href="#" class="tilt-card flex items-center gap-4 p-5 bg-zinc-800/70 rounded-2xl hover:bg-blue-500/20 transition fade-in">
+                        <i class="fab fa-linkedin text-3xl text-blue-400"></i>
+                        <div>MOHAMMED CHIMSI</div>
+                    </a>
+                    <!-- Add the rest of your team members here with their LinkedIn links -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 text-center text-zinc-500 text-sm">
+        UMaT CY381 Cybersecurity Lab Work 1 • March 2026 • Tarkwa, Ghana
+    </footer>
 
     <script>
-        // Scroll fade-in animation on all cards
         document.querySelectorAll('.fade-in').forEach(el => {
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
