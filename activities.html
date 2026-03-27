@@ -9,10 +9,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .neon { text-shadow: 0 0 30px #00f7ff, 0 0 60px #00f7ff; }
+        .neon { text-shadow: 0 0 15px #00f7ff, 0 0 30px #00f7ff; }
         .tilt { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
-        .tilt:hover { transform: perspective(1200px) rotateX(12deg) rotateY(12deg) scale(1.05); }
-        .fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+        .tilt:hover { transform: perspective(1000px) rotateX(8deg) rotateY(8deg) scale(1.03); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -21,8 +21,8 @@
     <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <i class="fas fa-shield-alt text-5xl text-cyan-400"></i>
-                <h1 class="text-3xl font-black tracking-[-2px] neon">PROTECT THE HOUSEHOLD</h1>
+                <i class="fas fa-shield-alt text-4xl text-cyan-400"></i>
+                <h1 class="text-2xl font-black tracking-[-1px] neon">PROTECT THE HOUSEHOLD</h1>
             </div>
             <div class="flex items-center gap-10 text-sm font-medium uppercase tracking-widest">
                 <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -37,26 +37,26 @@
     </nav>
 
     <div class="max-w-7xl mx-auto px-8 py-32">
-        <h1 class="text-[90px] leading-none font-black tracking-[-6px] neon text-center mb-20">ACTIVITIES</h1>
+        <h1 class="text-5xl font-black tracking-[-2px] neon text-center mb-16">Our Activities</h1>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
-                <h3 class="text-3xl font-bold mb-4">Walk-Through Exhibition</h3>
+                <h3 class="text-2xl font-bold mb-4">Walk-Through Exhibition</h3>
                 <p class="text-zinc-400">Real home setup with live demos on default settings.</p>
             </div>
             <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
-                <h3 class="text-3xl font-bold mb-4">Family Cyber Safety Breakfast</h3>
+                <h3 class="text-2xl font-bold mb-4">Family Cyber Safety Breakfast</h3>
                 <p class="text-zinc-400">Parents & teens discussing real scenarios.</p>
             </div>
             <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
-                <h3 class="text-3xl font-bold mb-4">Live Unboxing & Demo</h3>
+                <h3 class="text-2xl font-bold mb-4">Live Unboxing & Demo</h3>
                 <p class="text-zinc-400">Showing what happens on factory settings.</p>
             </div>
             <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
-                <h3 class="text-3xl font-bold mb-4">Roving Table Campaign</h3>
+                <h3 class="text-2xl font-bold mb-4">Roving Table Campaign</h3>
                 <p class="text-zinc-400">Took the message into Tarkwa public spaces.</p>
             </div>
             <div class="tilt bg-zinc-900/80 p-10 rounded-3xl fade-in">
-                <h3 class="text-3xl font-bold mb-4">Cyber Threat Simulation</h3>
+                <h3 class="text-2xl font-bold mb-4">Cyber Threat Simulation</h3>
                 <p class="text-zinc-400">Participants experienced AI voice-cloning scams.</p>
             </div>
         </div>
