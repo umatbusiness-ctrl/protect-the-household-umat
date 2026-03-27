@@ -17,14 +17,42 @@
             filter: brightness(0.55) contrast(1.15) saturate(1.1);
             transition: transform 0.6s ease-out;
         }
-        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,20,0.7), rgba(10,10,20,0.95)); z-index: 1; }
+        .hero::after { 
+            content: ''; 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(to bottom, rgba(10,10,20,0.7), rgba(10,10,20,0.95)); 
+            z-index: 1; 
+        }
         .content { position: relative; z-index: 2; }
-        .title { font-size: 4rem; line-height: 1.05; font-style: italic; font-weight: 700; text-shadow: 0 0 30px rgba(34, 211, 238, 0.7); }
-        .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.9s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .title { 
+            font-size: 4rem; 
+            line-height: 1.05; 
+            font-style: italic; 
+            font-weight: 700; 
+            text-shadow: 0 0 30px rgba(34, 211, 238, 0.7); 
+        }
+        .team-card {
+            transition: all 0.4s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            background-color: #1f2937;
+        }
+        .fade-in { 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: all 0.9s ease; 
+        }
+        .fade-in.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
+    <!-- NAVBAR -->
     <nav class="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -43,6 +71,7 @@
         </div>
     </nav>
 
+    <!-- HERO - Same background as home page -->
     <header class="hero">
         <div class="hero-bg" id="bg"></div>
         <div class="content min-h-screen flex items-center justify-center px-8 text-center">
@@ -52,13 +81,97 @@
         </div>
     </header>
 
+    <!-- Team Section with real LinkedIn links -->
     <section class="py-20 bg-zinc-900">
-        <div class="max-w-4xl mx-auto px-8 text-center">
-            <p class="text-xl text-zinc-300 mb-12">Have questions or want to collaborate? Reach out to our team.</p>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Add your team LinkedIn links here later -->
-                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">JOEL MENSAH KORDIE ANKAMAH-BOATENG (Leader)</div>
-                <div class="bg-zinc-800 p-8 rounded-3xl fade-in">MOHAMMED CHIMSI</div>
+        <div class="max-w-5xl mx-auto px-8">
+            <h2 class="text-4xl font-semibold text-center mb-12">Meet Our Team</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://www.linkedin.com/in/joel-mensah-kordie-ankamah-boateng" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">JOEL MENSAH KORDIE ANKAMAH-BOATENG</p>
+                        <p class="text-sm text-cyan-400">(Group Leader)</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/michael-frimpong-benefo-a33572254" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">BENEFO FRIMPONG MICHEAL</p>
+                        <p class="text-sm text-cyan-400">(Smart TV and Connected Devices Demonstrator)</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/ibrahim-abdul-aziz-424733300" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">IBRAHIM ABDUL AZIZ</p>
+                        <p class="text-sm text-cyan-400">(In-Game Stranger Danger and Grooming Demonstrator)</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/mohammed-chimsi-969850312" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">MOHAMMED CHIMSI</p>
+                        <p class="text-sm text-cyan-400">(Smart Speaker and Voice Data Demonstrator)</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/daniel-guuyire-411b482ab" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">GUUYIRE DANIEL WENAWOME</p>
+                        <p class="text-sm text-cyan-400">(Home CCTV and Camera Privacy Demonstrator)</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/isaiah-mwiguma-furo-ab77523a7" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">FURO ISAIAH MWIGUMA</p>
+                        <p class="text-sm text-cyan-400">(AI Scams and Fake Content Demonstrator)</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/samuel-amoako-bukari-a354543ba" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">BUKARI SAMUEL AMOAKO</p>
+                        <p class="text-sm text-cyan-400">(AI Data Profiling and Phone Permissions Demonstrator)</p>
+                    </div>
+                </a>
+
+                <!-- Remaining members (no links provided yet) -->
+                <a href="#" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">SULEMANA AKUNATU ABDUL JALIL</p>
+                        <p class="text-sm text-cyan-400">(Gaming Addiction and Spending Mechanics Demonstrator)</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">YAMOAH PRINCE</p>
+                        <p class="text-sm text-cyan-400">(Safe Gaming Practices and Parental Controls Guide)</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="team-card bg-zinc-800 p-6 rounded-3xl flex items-center gap-4 fade-in hover:text-cyan-400">
+                    <i class="fas fa-user text-3xl text-cyan-400"></i>
+                    <div>
+                        <p class="font-medium">SALAKPI CYRIL SCON</p>
+                        <p class="text-sm text-cyan-400">(Voice Cloning and AI Impersonation Demonstrator)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mt-16 text-center text-zinc-400 text-sm">
+                Click on any name to visit their LinkedIn profile.<br>
+                You can add the missing links later when you have them.
             </div>
         </div>
     </section>
@@ -68,12 +181,15 @@
     </footer>
 
     <script>
+        // Parallax effect (same as home page)
         const bg = document.getElementById('bg');
         document.addEventListener('mousemove', (e) => {
             const x = (window.innerWidth / 2 - e.clientX) / 50;
             const y = (window.innerHeight / 2 - e.clientY) / 50;
             bg.style.transform = `translate(${x}px, ${y}px) scale(1.08)`;
         });
+
+        // Fade-in on scroll
         document.querySelectorAll('.fade-in').forEach(el => {
             const observer = new IntersectionObserver(entries => {
                 if (entries[0].isIntersecting) el.classList.add('visible');
